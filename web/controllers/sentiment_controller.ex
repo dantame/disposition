@@ -43,7 +43,7 @@ defmodule Disposition.SentimentController do
 
     case Repo.update(changeset) do
       {:ok, sentiment} ->
-        render(conn, "show.json", sentiment: sentiment)
+        render(conn, "sentiment.json", sentiment: sentiment)
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)

@@ -19,7 +19,10 @@ defmodule Disposition.SentimentView do
 
   def render("analyzed_sentiment.json", %{sentiment: sentiment}) do
     rendered = render("sentiment.json", %{sentiment: sentiment})
-
-    Map.merge(rendered, %{score: sentiment.score})
+    if rendered do
+      Map.merge(rendered, %{score: sentiment.score})
+    else
+      nil
+    end
   end
 end
