@@ -11,8 +11,7 @@ RUN mix compile
 ENV PORT 80
 EXPOSE 80
 
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+COPY ./entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["mix", "phoenix.server"]
