@@ -7,10 +7,10 @@ RUN node_modules/brunch/bin/brunch build --production
 RUN mix local.hex --force
 RUN mix deps.get
 RUN mix compile
-RUN ecto.create
-RUN ecto.migrate
 
 ENV PORT 80
 EXPOSE 80
+
+ENTRYPOINT ["/opt/app/entrypoint.sh"]
 
 CMD ["mix", "phoenix.server"]
