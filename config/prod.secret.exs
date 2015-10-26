@@ -9,5 +9,5 @@ config :disposition, Disposition.Endpoint,
 # Configure your database
 config :disposition, Disposition.Repo,
   adapter: Ecto.Adapters.Postgres,
-  url: {:system, "DATABASE_URL"}
+  url: {:system, "DATABASE_URL"},
   pool_size: 20

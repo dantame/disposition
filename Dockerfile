@@ -1,5 +1,7 @@
 FROM marcelocg/phoenix:latest
 
+RUN apt-get install postgresql-client
+
 COPY . /opt/app
 WORKDIR /opt/app
 RUN npm install
@@ -12,6 +14,7 @@ ENV PORT 80
 EXPOSE 80
 
 COPY ./entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["mix", "phoenix.server"]
