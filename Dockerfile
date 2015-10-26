@@ -1,7 +1,7 @@
 FROM marcelocg/phoenix:latest
 
 COPY . /opt/app
-CD /opt/app
+WORKDIR /opt/app
 RUN npm install
 RUN node_modules/brunch/bin/brunch build --production
 RUN mix local.hex --force
