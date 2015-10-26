@@ -1,4 +1,4 @@
-# Disposition
+# Disposition [![Build Status](https://travis-ci.org/dantame/disposition.svg?branch=master)](https://travis-ci.org/dantame/disposition)
 
 To start your Phoenix app:
 
