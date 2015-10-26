@@ -1,6 +1,6 @@
 FROM marcelocg/phoenix:latest
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y postgresql-client
+RUN apt-get update && apt-get install -y postgresql-client
 
 COPY . /opt/app
 WORKDIR /opt/app
