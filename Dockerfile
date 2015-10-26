@@ -11,4 +11,4 @@ RUN mix compile
 ENV PORT 80
 EXPOSE 80
 
-CMD["mix", "phoenix.server"]
+CMD ["mix", "phoenix.server"]
