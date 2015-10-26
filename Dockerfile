@@ -1,10 +1,14 @@
 FROM marcelocg/phoenix:latest
 
 COPY . /opt/app
+CD /opt/app
+RUN npm install
 RUN node_modules/brunch/bin/brunch build --production
+RUN mix local.hex --force
+RUN mix deps.get
 RUN mix compile
 
-ENV PORT 4001
-EXPOSE 4001
+ENV PORT 80
+EXPOSE 80
 
 CMD["mix", "phoenix.server"]
